@@ -1,0 +1,401 @@
+/* Variabel warna */
+:root {
+  --primary-color: #6A1B9A;    /* Ungu */
+  --secondary-color: #81D4FA;  /* Biru muda */
+  --bg-light: #f9f9f9;
+  --text-color: #333;
+}
+
+/* Reset dan font dasar */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  color: var(--text-color);
+  background-color: #fff;
+  scroll-behavior: smooth;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* Styling Navbar */
+.navbar {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  z-index: 1000;
+}
+
+.navbar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-brand {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.8em;
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+.navbar-menu {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.navbar-menu li a {
+  text-decoration: none;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1em;
+  color: var(--text-color);
+  transition: color 0.3s ease;
+}
+
+.navbar-menu li a:hover {
+  color: var(--primary-color);
+}
+
+/* Navbar Toggle untuk Mobile */
+.navbar-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.navbar-toggle .bar {
+  height: 3px;
+  width: 25px;
+  background-color: var(--text-color);
+  margin: 4px 0;
+  transition: 0.3s;
+}
+
+/* Responsive: Menu Mobile */
+@media screen and (max-width: 768px) {
+  .navbar-menu {
+    position: absolute;
+    top: 60px; /* pastikan menyesuaikan tinggi navbar */
+    right: 0;
+    background-color: #fff;
+    flex-direction: column;
+    width: 200px;
+    display: none;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
+  
+  .navbar-menu li {
+    text-align: center;
+    padding: 10px 0;
+  }
+  
+  .navbar-toggle {
+    display: flex;
+  }
+}
+
+/* Pastikan ada padding-top pada body atau container utama 
+   untuk menghindari tertutupnya konten oleh navbar yang fixed */
+body {
+  padding-top: 80px; /* sesuaikan dengan tinggi navbar */
+}
+
+
+/* Hero Section */
+#hero {
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  color: #fff;
+  padding: 100px 0;
+  text-align: center;
+}
+
+#hero h1 {
+  font-size: 2.8em;
+  margin-bottom: 20px;
+}
+
+#hero p {
+  font-size: 1.2em;
+  margin-bottom: 30px;
+}
+
+.cta-btn {
+  background-color: #fff;
+  color: var(--primary-color);
+  text-decoration: none;
+  padding: 12px 30px;
+  border-radius: 25px;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.cta-btn:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+/* Styling Bagian Keunggulan yang Diperbarui */
+#keunggulan {
+  padding: 80px 0;
+  background: linear-gradient(135deg, rgba(106, 27, 154, 0.1), rgba(129, 212, 250, 0.1));
+  text-align: center;
+}
+
+#keunggulan h2 {
+  font-size: 2.5em;
+  margin-bottom: 50px;
+  color: var(--primary-color);
+}
+
+/* Grid untuk kartu keunggulan */
+.advantage-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  justify-items: center;
+}
+
+/* Styling untuk setiap kartu */
+.advantage-card {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 15px;
+  padding: 30px 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
+  max-width: 300px;
+}
+
+.advantage-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Styling untuk ikon di kartu */
+.advantage-card .icon {
+  margin-bottom: 20px;
+}
+
+.advantage-card img {
+  width: 60px;
+  height: 60px;
+}
+
+/* Typography kartu */
+.advantage-card h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.5em;
+  margin-bottom: 15px;
+  color: var(--primary-color);
+}
+
+.advantage-card p {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1em;
+  color: var(--text-color);
+  line-height: 1.5;
+}
+
+
+/* Paket Harga */
+#paket {
+  background-color: var(--bg-light);
+  padding: 60px 0;
+  text-align: center;
+}
+
+#paket h2 {
+  margin-bottom: 30px;
+}
+
+.pricing {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.pricing-item {
+  background: #fff;
+  border: 2px solid var(--primary-color);
+  border-radius: 10px;
+  padding: 20px;
+  width: 300px;
+  transition: transform 0.3s ease;
+}
+
+.pricing-item:hover {
+  transform: scale(1.05);
+}
+
+.pricing-item h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.price {
+  font-size: 2em;
+  color: var(--primary-color);
+  margin-bottom: 15px;
+}
+
+.pricing-item ul {
+  list-style: none;
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.pricing-item li {
+  margin: 8px 0;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: var(--primary-color);
+  color: #fff;
+  border-radius: 25px;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.btn:hover {
+  background-color: var(--secondary-color);
+}
+
+/* Testimoni */
+#testimoni {
+  padding: 60px 0;
+  text-align: center;
+}
+
+#testimoni h2 {
+  margin-bottom: 30px;
+}
+
+.testimoni-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.testimonial {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  max-width: 300px;
+}
+
+.testimonial p {
+  font-style: italic;
+  margin-bottom: 10px;
+}
+
+/* FAQ */
+#faq {
+  background-color: var(--bg-light);
+  padding: 60px 0;
+}
+
+#faq h2 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.faq-item {
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.faq-question {
+  cursor: pointer;
+  font-weight: bold;
+  color: var(--primary-color);
+  padding: 10px 0;
+}
+
+.faq-answer {
+  display: none;
+  padding-top: 10px;
+  line-height: 1.6;
+}
+
+/* CTA Section Kedua */
+#cta-second {
+  background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+  color: #fff;
+  padding: 60px 0;
+  text-align: center;
+}
+
+#cta-second h2 {
+  margin-bottom: 20px;
+}
+
+#cta-second p {
+  font-size: 1.2em;
+  margin-bottom: 30px;
+}
+
+/* Footer */
+footer {
+  background-color: var(--primary-color);
+  color: #fff;
+  padding: 40px 0;
+  text-align: center;
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.footer-content div {
+  margin: 10px;
+}
+
+.footer-social a {
+  margin-right: 10px;
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer-copy {
+  font-size: 0.9em;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .pricing {
+    flex-direction: column;
+    align-items: center;
+  }
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+  }
+}
